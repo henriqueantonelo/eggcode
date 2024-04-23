@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgb(45, 42, 46);
+  font-family: casca;
+}
+
+header {
+  position: sticky;
+  text-align: center;
+  background-color: rgb(25, 24, 26);
+  top: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+section {
+  border-bottom: 2px solid rgb(56, 56, 56);
+  border-top: 2px solid rgb(56, 56, 56);
+}
+
+h1 {
+  color: rgb(255, 216, 102);
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+  margin: 10px 0px 10px 0px;
+}
+
+p {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+pre {
+  border-radius: 15px;
+  scrollbar-color: rgb(56, 56, 56) rgb(25, 24, 26);
+  box-shadow: 0 0 10px 0px rgb(0, 0, 0);
+}

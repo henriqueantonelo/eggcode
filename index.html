@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Coding Challenges</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="/prism.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <a href="#">Javascript</a>
+      </ul>
+    </header>
+    <main>
+      <h1>Javascript Coding Challenges</h1>
+      <section>
+        <h2>Challenge nº1</h2>
+        <p>
+          Convert Age to Days Create a function that takes the age in years and
+          returns the age in days.
+        </p>
+        <p>Years to Days</p>
+        <input type="number" id="calc-age" onblur="calcAge(this.value)" />
+        <p id="ageResult">Waiting for input</p>
+        <pre>
+          <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
+const calcAge = function (age) {
+    age = age * 365;
+    calcAgeInput = document.getElementById(&quot;calc-age&quot;);
+    ageResult = document.getElementById(
+      &quot;ageResult&quot;
+    ).innerHTML = `${calcAgeInput.value} Years = ${age} Days `;
+  };
+            </code>
+        </pre>
+      </section>
+    </main>
+    <!-- <footer></footer> -->
+  </body>
+  <script src="/prism.js"></script>
+  <script src="script.js"></script>
+</html>
+<!DOCTYPE html>
+<html></html>
