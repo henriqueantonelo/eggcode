@@ -1,17 +1,4 @@
-// Convert Age to Days
-// Create a function that takes the age in years and returns the age in days.
-
-// Examples
-// calcAge(65) ➞ 23725
-
-// calcAge(0) ➞ 0
-
-// calcAge(20) ➞ 7300
-// Notes
-// Use 365 days as the length of a year for this challenge.
-// Ignore leap years and days between last birthday and now.
-// Expect only positive integer inputs.
-
+// Challenge nº1
 const calcAge = function (age) {
   age = age * 365;
   calcAgeInput = document.getElementById("calc-age");
@@ -19,3 +6,11 @@ const calcAge = function (age) {
     "ageResult"
   ).innerHTML = `${calcAgeInput.value} Years = ${age} Days `;
 };
+
+const dropDownMenu = document.querySelector(".dropdown-menu");
+const menuBtn = document.querySelector(".fa-bars");
+menuBtn.addEventListener("click", function () {
+  dropDownMenu.classList.toggle("dropdown-active");
+  menuBtn.classList.toggle("icon-active");
+  menuBtn.classList.toggle("rotate");
+});
