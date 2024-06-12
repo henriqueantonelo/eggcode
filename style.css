@@ -33,6 +33,7 @@ header {
   height: 60px;
   display: flex;
   justify-content: space-between;
+  box-shadow: rgb(37, 37, 37) 1px 1px 10px 1px;
 }
 
 .pointer {
@@ -125,10 +126,11 @@ main {
   flex-grow: 1;
 }
 
-/* section {
+section {
   border-bottom: 2px solid var(--border);
   border-top: 2px solid var(--border);
-} */
+  margin-bottom: 100px;
+}
 
 h1 {
   color: var(--primaryColor);
@@ -154,4 +156,55 @@ footer {
   background-color: var(--headerBg);
   padding: 10px 0;
   text-align: center;
+}
+
+.problem-description {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.console {
+  tab-size: 4;
+  background: rgb(25, 24, 26);
+  color: white;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  text-align: left;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.console-log {
+  font-size: 1.2em;
+}
+
+.console-input {
+  background: rgb(25, 24, 26);
+  color: white;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  line-height: 1.5;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  font-size: 1em;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
 }
