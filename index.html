@@ -19,13 +19,13 @@
       <div class="logo pointer">
         <a href="#">"EGGCODE"</a>
       </div>
-      <div class="menu">
-        <a href="#">Code</a>
-        <a href="#"><i class="fa-solid fa-bars"></i></a>
+      <div class="menu pointer">
+        <a>Code</a>
+        <a><i class="fa-solid fa-bars"></i></a>
       </div>
     </header>
     <div class="dropdown-menu">
-      <a class="theme pointer">
+      <a class="theme pointer" id="theme-btn">
         <i class="fa-solid fa-circle-half-stroke"></i>Theme
       </a>
       <a class="display pointer">
@@ -33,249 +33,24 @@
       </a>
     </div>
     <main>
-      <h1>HackerRank Challenges Codes</h1>
+      <h1>Code Collection Title</h1>
       <section>
         <div class="problem-description">
-          <h2>Challenge nº1</h2>
-          <p>
-            Convert Age to Days Create a function that takes the age in years
-            and returns the age in days.
-          </p>
-          <p>Years to Days</p>
-          <input type="number" id="calc-age" onblur="calcAge(this.value)" />
-          <p id="ageResult">Waiting for input</p>
+          <h2>Code title</h2>
+          <p>Problem description goes here.</p>
         </div>
         <pre>
           <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
-            const calcAge = function (age) {
-                age = age * 365;
-                calcAgeInput = document.getElementById(&quot;calc-age&quot;);
-                ageResult = document.getElementById(
-                  &quot;ageResult&quot;
-                ).innerHTML = `${calcAgeInput.value} Years = ${age} Days `;
-              };
-            </code>
-        </pre>
-      </section>
-
-      <!-- /// -->
-      <section>
-        <div class="problem-description">
-          <h2>Challenge nº1</h2>
-          <p>
-            Convert Age to Days Create a function that takes the age in years
-            and returns the age in days.
-          </p>
-          <pre class="console">
-            <code class="console-log">document.getElementById("calc-age");</code>
-          </pre>
-        </div>
-        <pre>
-          <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
-            const calcAge = function (age) {
-                age = age * 365;
-                calcAgeInput = document.getElementById(&quot;calc-age&quot;);
-                ageResult = document.getElementById(
-                  &quot;ageResult&quot;
-                ).innerHTML = `${calcAgeInput.value} Years = ${age} Days `;
-              };
-            </code>
-        </pre>
-      </section>
-      <!-- /// -->
-
-      <section>
-        <h2>Plus Minus</h2>
-        <p class="problem-description">
-          Given an array of integers, calculate the ratios of its elements that
-          are positive, negative, and zero. Print the decimal value of each
-          fraction on a new line with places after the decimal.
-        </p>
-        <pre>
-          <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
-
-            const plusMinus = function (arr) {
-              let positiveArr = [];
-              let negativeArr = [];
-              let zeroArr = [];
-              for (let i = 0; i < arr.length; i++) {
-                if (arr[i] < 0) {
-                  negativeArr.push(arr[i]);
-                } else if (arr[i] > 0) {
-                  positiveArr.push(arr[i]);
-                } else {
-                  zeroArr.push(arr[i]);
-                }
-              }
-              let positive = (positiveArr.length / arr.length).toFixed(6);
-              let negative = (negativeArr.length / arr.length).toFixed(6);
-              let zero = (zeroArr.length / arr.length).toFixed(6);
-              console.log(positive, negative, zero);
-            };
-            
-            plusMinus([-4, 3, -9, 0, 4, 1]);
-            </code>
-        </pre>
-      </section>
-      <section>
-        <h2>Mini-Max Sum</h2>
-        <p class="problem-description">
-          Given five positive integers, find the minimum and maximum values that
-          can be calculated by summing exactly four of the five integers. Then
-          print the respective minimum and maximum values as a single line of
-          two space-separated long integers.
-        </p>
-        <pre>
-          <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
-
-            const miniMaxSum = function (arr) {
-              arr.sort();
-              let lowest = arr.shift();
-              let highest = arr.pop();
-              const maxSum = function () {
-                let maxArr = 0;
-                maxArr = arr;
-                maxArr.push(highest);
-                maxArr.sort();
-                let sum = 0;
-                for (let i = 0; i < maxArr.length; i++) {
-                  sum += arr[i];
-                }
-                return sum;
-              };
-            
-              const miniSum = function () {
-                let minArr = 0;
-                minArr = arr;
-                minArr.push(lowest);
-                minArr.sort();
-                minArr.pop();
-                let sum = 0;
-                for (let i = 0; i < arr.length; i++) {
-                  sum += arr[i];
-                }
-                return sum;
-              };
-            
-              let maxSumResult = maxSum();
-              let miniSumResult = miniSum();
-              console.log(miniSumResult, maxSumResult);
-            };
-            
-            miniMaxSum([7, 69, 2, 221, 8974]);
-            </code>
-        </pre>
-      </section>
-      <section>
-        <h2>Pangrams</h2>
-        <p class="problem-description">
-          A pangram is a string that contains every letter of the alphabet.
-          Given a sentence determine whether it is a pangram in the English
-          alphabet. Ignore case. Return either pangram or not pangram as
-          appropriate.
-        </p>
-        <pre>
-          <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
-
-
-      const pangram = function (s) {
-        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let inputUppercase = s.toUpperCase();
-      
-        function removeDuplicate() {
-          let charArray = inputUppercase.split("");
-          let uniqueChars = [...new Set(charArray)];
-          uniqueChars.sort();
-          let inputNoSpecialChar = uniqueChars.toString().replace(/[^A-Z0-9]+/gi, "");
-          return inputNoSpecialChar;
-        }
-      
-        function subtractCharacters(str1, str2) {
-          let result = str1;
-          for (const char of str2) {
-            const regex = new RegExp(char, "g");
-            result = result.replace(regex, "");
-          }
-          return result;
-        }
-      
-        function moreThanOne() {
-          let more = subtractCharacters(alphabet, removeDuplicate(s));
-          const myArray = more.split("");
-          return myArray;
-        }
-      
-        moreThanOne();
-      
-        if (removeDuplicate(s) == alphabet) {
-          console.log("It is a pangram!");
-        } else {
-          console.log(`It's not a pangram, because it's missing ${moreThanOne()}`);
-        }
-      };
-
-      pangram("We promptly judged antique ivory bt prize");
-
-            </code>
-        </pre>
-      </section>
-      <section>
-        <div class="problem-description">
-          <h2>Time Conversion</h2>
-          <p>
-            Given a time in 12-hour AM/PM format, convert it to military
-            (24-hour) time.
-            <br />
-            <br />
-            Example
-            <br />
-            <br />
-            Input = '07:01:00PM'
-            <br />
-            Return '19:01:00'.
-            <br />
-            Input = '08:11:59AM'
-            <br />
-            Return '08:11:59'.
-            <br />
-          </p>
-          <pre class="console">
-            <input class="console-input" type="text" placeholder="Type your input here." id="time-conversion-input">
-              <code class="console-log" id="time-conversion-log">...</code>
-          </pre>
-          <button id="time-conversion-btn">Run code</button>
-        </div>
-        <pre>
-          <code class="language-javascript line-numbers" data-prismjs-copy="Copy the JavaScript snippet!">
-            function timeConversion(s) {
-              let hour = s.slice(0, -8);
-              let period = s.slice(-2);
-              let minuteSecond = s.slice(2, -2);
-              let midnight = "00";
-            
-              if (period === "AM" && hour <= "11") {
-                let am = s.slice(0, -2);
-                return am;
-              } else if (period === "AM" && hour === "12") {
-                let convertion = midnight + minuteSecond;
-                return convertion;
-              } else if (period === "PM" && hour < "12") {
-                let num = Number(hour);
-                let convertion = num + 12;
-                let pm = convertion.toString() + minuteSecond;
-                return pm;
-              } else if (period === "PM" && hour === "12") {
-                let pm = s.slice(0, -2);
-                return pm;
-              }
-            }
-            
-            console.log(timeConversion("12:00:00AM"));
+let yourCodeGoesHere = true
             </code>
         </pre>
       </section>
     </main>
-    <footer><i class="fa-brands fa-github"></i></footer>
+    <footer>
+      <a href="https://github.com/henriqueantonelo">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </footer>
   </body>
   <script src="/prism.js"></script>
   <script src="script.js"></script>

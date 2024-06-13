@@ -1,6 +1,18 @@
 :root {
+  --background: #fff;
+  --headerBg: #f1f1f1;
+  --headerShadow: rgb(255, 255, 255);
+  --dropdownMenu: #e1e1e1;
+  --primaryColor: #ff005c;
+  --textPrimary: #000000;
+  --headerText: #a0a0a0;
+  --border: rgb(56, 56, 56);
+  --boxShadow: #000;
+}
+.dark-mode {
   --background: rgb(45, 42, 46);
   --headerBg: rgb(25, 24, 26);
+  --headerShadow: #121212;
   --dropdownMenu: #131214;
   --primaryColor: rgb(255, 216, 102);
   --textPrimary: #fff;
@@ -33,7 +45,8 @@ header {
   height: 60px;
   display: flex;
   justify-content: space-between;
-  box-shadow: rgb(37, 37, 37) 1px 1px 10px 1px;
+  box-shadow: var(--headerShadow) 1px 1px 10px 1px;
+  z-index: 2;
 }
 
 .pointer {
@@ -81,19 +94,22 @@ a:hover {
   background-color: var(--dropdownMenu);
   right: 0;
   display: block;
-  position: absolute;
+  position: fixed;
   padding: 10px 30px 10px 30px;
   font-size: 20px;
   margin-right: 10px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   transition: 0.5s;
+  pointer-events: none;
 }
 
 .dropdown-active {
-  z-index: -1;
+  z-index: 1;
+
   transition: 0.5s;
   top: 60px;
+  pointer-events: auto;
 }
 
 .dropdown-menu a {
@@ -113,8 +129,17 @@ a:hover {
   margin-right: 10px;
 }
 
+#theme-btn {
+  cursor: pointer;
+  z-index: 999;
+}
+
 .fa-window-maximize {
   margin-right: 10px;
+}
+
+.fa-github:hover {
+  color: var(--primaryColor);
 }
 
 main {
